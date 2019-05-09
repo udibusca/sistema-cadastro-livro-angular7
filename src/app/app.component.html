@@ -1,24 +1,33 @@
-<ng2-slim-loading-bar color="blue"></ng2-slim-loading-bar>
 <body style="background-color:powderblue;">
-<h1 style="font-family:verdana;"> Welcome to Azure Devops Demo!  </h1>
-<h2 style="font-family:courier;"> Build version number {{version.version}} </h2>
 </body>
-<!-- <nav class="navbar navbar-expand-sm bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+    <a class="navbar-brand" routerLink="home">Sistema Ecommerce</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
   <div class="container-fluid">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a routerLink="business/create" class="nav-link" routerLinkActive="active">
-          Create Business
-        </a>
+        <a routerLink="business/create" class="nav-link" routerLinkActive="active">Create Business</a>
       </li>
       <li class="nav-item">
-        <a routerLink="business" class="nav-link" routerLinkActive="active">
-          Business
-        </a>
-      </li> 
+        <a routerLink="business" class="nav-link" routerLinkActive="active">Business</a>
+      </li>
+      <li class="nav-item">
+          <a routerLink="categoria/nova" class="nav-link" routerLinkActive="active">
+            Nova Categoria
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="categoria" class="nav-link" routerLinkActive="active">
+            Categorias
+          </a>
+        </li>        
     </ul>
   </div>
-</nav> -->
+</nav>
 <br />
 <div class="container">
   <router-outlet></router-outlet>

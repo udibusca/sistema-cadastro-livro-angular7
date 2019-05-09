@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Codigo</th>
+        <th scope="col">Descrição</th>
+        <td colspan="2">Acão</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let categoria of categorias">
+        <th scope="row">{{ categoria.idCategoria }}</th>
+        <td>{{ categoria.descricao }}</td>
+        <td><a [routerLink]="['edit', categoria.idCategoria]" class="btn btn-primary">Editar</a></td>
+        <td><a (click) = "deleteCategoria(categoria.idCategoria)" class="btn btn-danger">Deletar</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span ng-show="(categorias | filter: criterio).length == 0">Infelizmente  n&atilde;o temos o que voc&ecirc; est&aacute; procurando</span>

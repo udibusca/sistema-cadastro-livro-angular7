@@ -33,6 +33,7 @@ export class GstEditComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.bs.editBusiness(params['id']).subscribe(res => {
         this.business = res;
+        console.log(res);
       });
     });
   }

@@ -12,13 +12,19 @@ import { GstGetComponent } from './gst-get/gst-get.component';
 import { GstEditComponent } from './gst-edit/gst-edit.component';
 
 import { BusinessService } from './business.service';
+import { CategoriaAddComponent } from './categoria-add/categoria-add.component';
+import { CategoriaGetComponent } from './categoria-get/categoria-get.component';
+import { CategoriaEditComponent } from './categoria-edit/categoria-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GstAddComponent,
     GstGetComponent,
-    GstEditComponent
+    GstEditComponent,
+    CategoriaAddComponent,
+    CategoriaGetComponent,
+    CategoriaEditComponent
   ],
   imports: [
     BrowserModule,

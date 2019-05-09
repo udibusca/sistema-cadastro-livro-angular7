@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="card-body">
+      <form [formGroup]="angForm" novalidate>
+        <div class="form-group">
+          <label class="col-md-4">ID</label>
+          <input type="text" class="form-control" formControlName="idCategoria" #idCategoria [(ngModel)] = "categoria.idCategoria" disabled />
+        </div>
+        <div class="form-group">
+          <label class="col-md-4">Descrição </label>
+          <input type="text" class="form-control" formControlName="descricao" #descricao [(ngModel)] = "categoria.descricao" />
+        </div>
+        <div *ngIf="angForm.controls['descricao'].invalid && (angForm.controls['descricao'].dirty || angForm.controls['descricao'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['descricao'].errors.required">
+            Person Business is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <button (click)="updateCategoria(descricao.value)"
+          [disabled]="angForm.invalid" 
+          class="btn btn-primary">Atualiza</button>
+        </div>
+      </form>
+    </div>
+  </div>
