@@ -11,13 +11,11 @@
         </div>
         <div *ngIf="angForm.controls['descricao'].invalid && (angForm.controls['descricao'].dirty || angForm.controls['descricao'].touched)" class="alert alert-danger">
           <div *ngIf="angForm.controls['descricao'].errors.required">
-            Person Business is required.
+            Descrição Obrigatória.
           </div>
         </div>
         <div class="form-group">
-          <button (click)="updateCategoria(descricao.value)"
-          [disabled]="angForm.invalid" 
-          class="btn btn-primary">Atualiza</button>
+          <button (click)="updateCategoria(angForm.value)" [disabled]="angForm.invalid" class="btn btn-primary">Atualizar</button>
         </div>
       </form>
     </div>

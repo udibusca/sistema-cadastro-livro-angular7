@@ -7,36 +7,31 @@ import { HttpClient } from '@angular/common/http';
 export class CategoriaService {
 
   uri = 'http://localhost:9000/categorias';
-  versionuri = 'http://localhost:9000/getversion';
 
   constructor(private http: HttpClient) { }
 
-  addCategoria(descricao) {
+  addCategoria(objRequest) {
     const obj = {
-      descricao: descricao
+      descricao: objRequest.descricao
     };
-    this.http.post(`${this.uri}/add`, obj)
-        .subscribe(res => console.log('Done'));
+    this.http.post(`${this.uri}`, obj)
+        .subscribe(res => console.log('Inserido'));
   }
 
   getCategorias() {
     return this.http.get(`${this.uri}`);
   }
 
-  getVersion() {
-    return this.http.get(`${this.versionuri}`);
-  }
-
   editCategoria(id) {
      return this.http.get(`${this.uri}/${id}`);
     }
 
-  updateCategoria(descricao, id) {
-
+  updateCategoria(objRequest, id) {
     const obj = {
-      descricao: descricao
+      idCategoria: id,
+      descricao: objRequest.descricao
     };
-    this.http.post(`${this.uri}/${id}`, obj)
+    this.http.put(`${this.uri}`, obj)
       .subscribe(res => console.log('Atualizado'));
   }
 

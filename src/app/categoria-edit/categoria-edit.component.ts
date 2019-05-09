@@ -31,16 +31,15 @@ export class CategoriaEditComponent implements OnInit {
       this.route.params.subscribe(params => {
         this.cat.editCategoria(params['id']).subscribe(res => {
           this.categoria = res;
-          console.log(res);
         });
       });
     }
 
-    updateCategoria(descricao) {
-      this.route.params.subscribe(params => {
-         this.cat.updateCategoria(descricao, params['id']);
-         this.router.navigate(['categoria']);
-      });
+    updateCategoria(categoria) {
+     this.route.params.subscribe(params => {
+      this.cat.updateCategoria(categoria, params['id']);
+      this.router.navigate(['categoria']);
+   });
    }
 
 }

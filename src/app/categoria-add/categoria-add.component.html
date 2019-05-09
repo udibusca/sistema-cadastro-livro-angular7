@@ -1,3 +1,18 @@
-<p>
-  categoria-add works!
-</p>
+<div class="card">
+    <div class="card-body">
+      <form [formGroup]="angForm" novalidate>
+        <div class="form-group">
+          <label class="col-md-4">Descrição</label>
+          <input type="text" class="form-control" formControlName="descricao" #descricao />
+        </div>
+        <div *ngIf="angForm.controls['descricao'].invalid && (angForm.controls['descricao'].dirty || angForm.controls['descricao'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['descricao'].errors.required">
+            Descrição Obrigatória.
+          </div>
+        </div>
+        <div class="form-group">
+          <button (click)="addCategoria(angForm.value)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Novo</button>
+        </div>
+      </form>
+    </div>
+  </div>

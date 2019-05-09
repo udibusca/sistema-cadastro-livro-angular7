@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CategoriaService } from '../categoria.service';
 
 @Component({
   selector: 'app-categoria-add',
@@ -7,7 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriaAddComponent implements OnInit {
 
-  constructor() { }
+  angForm: FormGroup;
+
+  constructor(private router: Router,
+              private fb: FormBuilder, 
+              private cat: CategoriaService) {
+    this.createForm();
+  }
+
+  createForm() {
+    this.angForm = this.fb.group({
+      descricao: ['', Validators.required ],
+    });
+  }
+
+  addCategoria(objRequest) {
+    this.cat.addCategoria(objRequest);
+    this.router.navigate(['categoria']);
+  }
 
   ngOnInit() {
   }
