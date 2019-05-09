@@ -11,7 +11,7 @@ import { GstAddComponent } from './gst-add/gst-add.component';
 import { GstGetComponent } from './gst-get/gst-get.component';
 import { GstEditComponent } from './gst-edit/gst-edit.component';
 
-import { BusinessService } from './business.service';
+import { BusinessService } from './service/business.service';
 import { CategoriaAddComponent } from './categoria-add/categoria-add.component';
 import { CategoriaGetComponent } from './categoria-get/categoria-get.component';
 import { CategoriaEditComponent } from './categoria-edit/categoria-edit.component';

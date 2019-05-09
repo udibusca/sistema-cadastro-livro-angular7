@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import Business from '../Business';
-import { BusinessService } from '../business.service';
+import Business from '../model/Business';
+import { BusinessService } from '../service/business.service';
 
 @Component({
   selector: 'app-gst-get',

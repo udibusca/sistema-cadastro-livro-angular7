@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
-import { BusinessService } from '../business.service';
+import { BusinessService } from '../service/business.service';
 
 @Component({
   selector: 'app-gst-add',
