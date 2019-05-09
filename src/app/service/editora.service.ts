@@ -12,7 +12,7 @@ export class EditoraService {
 
   addEditora(objRequest) {
     const obj = {
-      descricao: objRequest.descricao
+      nome: objRequest.nome
     };
     this.http.post(`${this.uri}`, obj)
         .subscribe(res => console.log('Inserido'));
@@ -29,7 +29,7 @@ export class EditoraService {
   updateEditora(objRequest, id) {
     const obj = {
       idEditora: id,
-      descricao: objRequest.descricao
+      nome: objRequest.nome
     };
     this.http.put(`${this.uri}`, obj)
       .subscribe(res => console.log('Atualizado'));

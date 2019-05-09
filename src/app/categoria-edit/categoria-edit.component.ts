@@ -41,5 +41,4 @@ export class CategoriaEditComponent implements OnInit {
       this.router.navigate(['categoria']);
    });
    }
-
 }
