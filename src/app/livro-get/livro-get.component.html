@@ -1,3 +1,26 @@
-<p>
-  livro-get works!
-</p>
+<h4>Listar Livros</h4>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Codigo</th>
+        <th scope="col">ISBN</th>
+        <th scope="col">Titulo</th>
+        <th scope="col">Autor</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Editora</th>
+        <td scope="col" colspan="2">Acão</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let livro of livros">
+        <th scope="row">{{ livro.codigo }}</th>
+        <td>{{ livro.isbn }}</td>
+        <td>{{ livro.titulo }}</td>
+        <td>{{ livro.autor }}</td>
+        <td>{{ livro.categoria.descricao }}</td>
+        <td>{{ livro.editora.nome }}</td>
+        <td><a [routerLink]="['edit', livro.codigo]" class="btn btn-primary">Editar</a></td>
+        <td><a (click) = "deleteLivro(livro.codigo)" class="btn btn-danger">Deletar</a></td>
+      </tr>
+    </tbody>
+  </table>
