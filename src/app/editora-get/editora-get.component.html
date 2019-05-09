@@ -1,0 +1,18 @@
+<h4>Listar editoras</h4>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Codigo</th>
+        <th scope="col">Descrição</th>
+        <td scope="col" colspan="2">Acão</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let editora of editoras">
+        <th scope="row">{{ editora.idEditora }}</th>
+        <td>{{ editora.nome }}</td>
+        <td><a [routerLink]="['edit', editora.idEditora]" class="btn btn-primary">Editar</a></td>
+        <td><a (click) = "deleteEditora(editora.idEditora)" class="btn btn-danger">Deletar</a></td>
+      </tr>
+    </tbody>
+  </table>

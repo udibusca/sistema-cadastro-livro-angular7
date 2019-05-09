@@ -31,5 +31,4 @@ export class CategoriaAddComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

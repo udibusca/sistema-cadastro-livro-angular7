@@ -12,9 +12,18 @@ import { GstGetComponent } from './gst-get/gst-get.component';
 import { GstEditComponent } from './gst-edit/gst-edit.component';
 
 import { BusinessService } from './service/business.service';
+import { CategoriaService } from './service/categoria.service';
+import { EditoraService } from './service/editora.service';
+//import { LivroService } from './service/livro.service';
 import { CategoriaAddComponent } from './categoria-add/categoria-add.component';
 import { CategoriaGetComponent } from './categoria-get/categoria-get.component';
 import { CategoriaEditComponent } from './categoria-edit/categoria-edit.component';
+import { EditoraAddComponent } from './editora-add/editora-add.component';
+import { EditoraGetComponent } from './editora-get/editora-get.component';
+import { EditoraEditComponent } from './editora-edit/editora-edit.component';
+import { LivroAddComponent } from './livro-add/livro-add.component';
+import { LivroGetComponent } from './livro-get/livro-get.component';
+import { LivroEditComponent } from './livro-edit/livro-edit.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +33,13 @@ import { CategoriaEditComponent } from './categoria-edit/categoria-edit.componen
     GstEditComponent,
     CategoriaAddComponent,
     CategoriaGetComponent,
-    CategoriaEditComponent
+    CategoriaEditComponent,
+    EditoraAddComponent,
+    EditoraGetComponent,
+    EditoraEditComponent,
+    LivroAddComponent,
+    LivroGetComponent,
+    LivroEditComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +48,11 @@ import { CategoriaEditComponent } from './categoria-edit/categoria-edit.componen
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ BusinessService ],
+  providers: [ BusinessService,
+               CategoriaService,
+               EditoraService,
+               //LivroService
+              ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
