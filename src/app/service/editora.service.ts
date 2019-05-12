@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Headers } from '@angular/http';
+
+import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/do';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +12,7 @@ import { HttpClient } from '@angular/common/http';
 export class EditoraService {
 
   uri = 'http://localhost:9000/editoras';
+  private headers = new Headers({ 'Content-Type': 'application/json' });
 
   constructor(private http: HttpClient) { }
 
@@ -36,6 +42,12 @@ export class EditoraService {
   }
 
  deleteEditora(id) {
-    return this.http.delete(`${this.uri}/${id}`);
+    return this.http.delete(`${this.uri}/${id}`)
+    .catch(this.handleError);
+  }
+
+  private handleError(error: any): Promise<any> {
+    alert(error.error.errors[0]);
+    return Promise.reject(error.error.errors[0]|| error);
   }
 }

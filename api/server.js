@@ -18,10 +18,6 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname,'../dist/angular7crud')));
 
-app.get('/getversion',function(req,res){
-  console.log('Version '+version);
-  res.status(200).json({version:version})
-});
 app.use('/business', businessRoute);
 
 app.use('/',function(req,res){

@@ -43,7 +43,13 @@ export class LivroService {
       .subscribe(res => console.log('Atualizado'));
   }
 
- deleteLivro(id) {
-    return this.http.delete(`${this.uri}/${id}`);
+  deleteLivro(id) {
+    return this.http.delete(`${this.uri}/${id}`)
+    .catch(this.handleError);
+  }
+
+  private handleError(error: any): Promise<any> {
+    alert(error.error.errors[0]);
+    return Promise.reject(error.error.errors[0]|| error);
   }
 }

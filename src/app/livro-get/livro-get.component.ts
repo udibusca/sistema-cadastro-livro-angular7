@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import Livro from '../model/Livro';
 import { LivroService } from '../service/livro.service';
 
+
 @Component({
   selector: 'app-livro-get',
   templateUrl: './livro-get.component.html',
@@ -23,7 +24,8 @@ export class LivroGetComponent implements OnInit {
     this.cat.deleteLivro(id).subscribe(res => {
       this.cat.getLivros().subscribe((data: Livro[]) => {
         this.livros = data;
-    });;
+    });
     });
   }
+  
 }

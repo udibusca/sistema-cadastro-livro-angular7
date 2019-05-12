@@ -23,7 +23,7 @@ export class EditoraGetComponent implements OnInit {
     this.cat.deleteEditora(id).subscribe(res => {
       this.cat.getEditoras().subscribe((data: Editora[]) => {
         this.editoras = data;
-    });;
+      });
     });
   }
 }

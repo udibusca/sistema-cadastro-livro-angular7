@@ -35,7 +35,14 @@ export class CategoriaService {
       .subscribe(res => console.log('Atualizado'));
   }
 
- deleteCategoria(id) {
-    return this.http.delete(`${this.uri}/${id}`);
+
+  deleteCategoria(id) {
+    return this.http.delete(`${this.uri}/${id}`)
+    .catch(this.handleError);
+  }
+
+  private handleError(error: any): Promise<any> {
+    alert(error.error.errors[0]);
+    return Promise.reject(error.error.errors[0]|| error);
   }
 }

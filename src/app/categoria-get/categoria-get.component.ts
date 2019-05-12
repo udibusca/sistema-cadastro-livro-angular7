@@ -21,10 +21,13 @@ export class CategoriaGetComponent implements OnInit {
 
   deleteCategoria(id) {
     this.cat.deleteCategoria(id).subscribe(res => {
-      this.cat.getCategorias().subscribe((data: Categoria[]) => {
+      this.cat.getCategorias().subscribe((
+        data: Categoria[]
+        ) => {
         this.categorias = data;
     });;
     });
   }
+
 
 }

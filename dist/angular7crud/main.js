@@ -134,16 +134,14 @@ var AppComponent = /** @class */ (function () {
         this._loadingBar = _loadingBar;
         this._router = _router;
         this.bs = bs;
-        this.title = 'angular7crud';
+        this.title = 'Sistema Livro';
         this._router.events.subscribe(function (event) {
             _this.navigationInterceptor(event);
         });
     }
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.bs
-            .getVersion()
-            .subscribe(function (data) {
+        this.bs.subscribe(function (data) {
             _this.version = data;
             console.log(_this.version);
         });
@@ -271,7 +269,6 @@ var BusinessService = /** @class */ (function () {
     function BusinessService(http) {
         this.http = http;
         this.uri = '/business';
-        this.versionuri = '/getversion';
     }
     BusinessService.prototype.addBusiness = function (person_name, business_name, business_gst_number) {
         var obj = {
@@ -287,11 +284,7 @@ var BusinessService = /** @class */ (function () {
             .http
             .get("" + this.uri);
     };
-    BusinessService.prototype.getVersion = function () {
-        return this
-            .http
-            .get("" + this.versionuri);
-    };
+
     BusinessService.prototype.editBusiness = function (id) {
         return this
             .http

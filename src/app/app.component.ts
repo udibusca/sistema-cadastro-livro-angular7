@@ -18,8 +18,8 @@ export class AppComponent implements OnInit{
 
   
 
-  title = 'angular7crud';
-  version;
+  title = 'Sistema Livro';
+
   constructor(private _loadingBar: SlimLoadingBarService, private _router: Router,private bs: BusinessService) {
     this._router.events.subscribe((event: Event) => {
       this.navigationInterceptor(event);
@@ -27,12 +27,6 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.bs
-      .getVersion()
-      .subscribe((data) => {
-        this.version = data;
-        console.log(this.version)
-    });
   }
   private navigationInterceptor(event: Event): void {
     if (event instanceof NavigationStart) {
