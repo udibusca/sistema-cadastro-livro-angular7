@@ -13,23 +13,28 @@ import { EditoraEditComponent } from './editora-edit/editora-edit.component';
 import { LivroAddComponent } from './livro-add/livro-add.component';
 import { LivroGetComponent } from './livro-get/livro-get.component';
 import { LivroEditComponent } from './livro-edit/livro-edit.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './login-guard';
+
 
 const routes: Routes = [
   {path: 'business/create',component: GstAddComponent},
   {path: 'business/edit/:id',component: GstEditComponent},
   {path: 'business',component: GstGetComponent},
 
-  {path: 'categoria/nova',component: CategoriaAddComponent},
-  {path: 'categoria/edit/:id',component: CategoriaEditComponent},
-  {path: 'categoria',component: CategoriaGetComponent},
+  {path: 'categoria/nova',component: CategoriaAddComponent,canActivate: [AuthGuard]},
+  {path: 'categoria/edit/:id',component: CategoriaEditComponent,canActivate: [AuthGuard]},
+  {path: 'categoria',component: CategoriaGetComponent,canActivate: [AuthGuard]},
 
-  {path: 'editora/nova',component: EditoraAddComponent},
-  {path: 'editora/edit/:id',component: EditoraEditComponent},
-  {path: 'editora',component: EditoraGetComponent},
+  {path: 'editora/nova',component: EditoraAddComponent,canActivate: [AuthGuard]},
+  {path: 'editora/edit/:id',component: EditoraEditComponent,canActivate: [AuthGuard]},
+  {path: 'editora',component: EditoraGetComponent,canActivate: [AuthGuard]},
 
-  {path: 'livro/nova',component: LivroAddComponent},
-  {path: 'livro/edit/:id',component: LivroEditComponent},
-  {path: 'livro',component: LivroGetComponent}
+  {path: 'livro/nova',component: LivroAddComponent,canActivate: [AuthGuard]},
+  {path: 'livro/edit/:id',component: LivroEditComponent,canActivate: [AuthGuard]},
+  {path: 'livro',component: LivroGetComponent,canActivate: [AuthGuard]},
+
+  {path: 'entrar',component: LoginComponent}
 
 ];
 

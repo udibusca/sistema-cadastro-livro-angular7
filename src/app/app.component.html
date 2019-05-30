@@ -14,7 +14,7 @@
               Cadastros
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a routerLink="categoria/nova" class="dropdown-item" routerLinkActive="active">Categoria</a>
+              <a routerLink="categoria/nova" class="dropdown-item" routerLinkActive="active" >Categoria</a>
               <a routerLink="editora/nova" class="dropdown-item" routerLinkActive="active">Editora</a>
               <div class="dropdown-divider"></div>
               <a routerLink="livro/nova" class="dropdown-item" routerLinkActive="active">Livro</a>
@@ -27,7 +27,17 @@
                 <a routerLink="editora" class="dropdown-item" routerLinkActive="active">Editoras</a>
                 <a routerLink="livro" class="dropdown-item" routerLinkActive="active">Livros</a>
               </div>
-            </li>               
+            </li>
+            <li class="nav-item active" *ngIf="!isAuth()">
+              <a class="nav-link" routerLink="entrar">
+                Login
+              </a>
+            </li>
+            <li class="nav-item active" *ngIf="isAuth()">
+                <a class="nav-link" (click)="onLogout()">
+                Sair
+                </a>
+            </li>            
     </ul>
   </div>
 </nav>

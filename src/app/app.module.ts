@@ -24,6 +24,10 @@ import { EditoraEditComponent } from './editora-edit/editora-edit.component';
 import { LivroAddComponent } from './livro-add/livro-add.component';
 import { LivroGetComponent } from './livro-get/livro-get.component';
 import { LivroEditComponent } from './livro-edit/livro-edit.component';
+import { LoginComponent } from './login/login.component';
+import { LoginServiceService } from './login-service.service';
+
+import { AuthGuard } from './login-guard';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,8 @@ import { LivroEditComponent } from './livro-edit/livro-edit.component';
     EditoraEditComponent,
     LivroAddComponent,
     LivroGetComponent,
-    LivroEditComponent
+    LivroEditComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +57,8 @@ import { LivroEditComponent } from './livro-edit/livro-edit.component';
                CategoriaService,
                EditoraService,
                //LivroService
+               LoginServiceService,
+               AuthGuard
               ],
   bootstrap: [AppComponent]
 })
