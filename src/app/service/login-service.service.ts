@@ -53,14 +53,6 @@ export class LoginServiceService {
     this.showNavBarEmitter.emit(ifShow);
   }
 
-  getLoginP(user) {
-
-    this.http.post(`${this.uri}`, user,
-    )
-      .subscribe(res => console.log('Retorno : ' + res));
-  }
-
-
   getLogin(user: User): Observable<User> {
     return this.http.post<User>(`${this.uri}`, user,
       {
