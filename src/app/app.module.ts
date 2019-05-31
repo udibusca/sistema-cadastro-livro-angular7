@@ -25,7 +25,7 @@ import { LivroAddComponent } from './livro-add/livro-add.component';
 import { LivroGetComponent } from './livro-get/livro-get.component';
 import { LivroEditComponent } from './livro-edit/livro-edit.component';
 import { LoginComponent } from './login/login.component';
-import { LoginServiceService } from './login-service.service';
+import { LoginServiceService } from './service/login-service.service';
 
 import { AuthGuard } from './login-guard';
 

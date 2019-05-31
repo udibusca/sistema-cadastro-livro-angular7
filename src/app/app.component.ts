@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {SlimLoadingBarService} from 'ng2-slim-loading-bar';
 import { BusinessService } from './service/business.service';
-import { LoginServiceService } from './login-service.service';
+import { LoginServiceService } from './service/login-service.service';
 
 import { NavigationCancel,
         Event,
